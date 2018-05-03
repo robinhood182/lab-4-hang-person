@@ -15,5 +15,11 @@ function randomWord(max){
 }
 console.log('app.js loaded');
 loadWord();
-console.log(answer);
-console.log(words[2]);
+//get length of answer
+//draw right amount of blank spaces
+//display correct letters
+//display guessed letters
+//create an input field for guesses and button
+//display hangman model
+//alert win or lose
+//create a restart button
