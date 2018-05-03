@@ -6,6 +6,7 @@ var guessedLetters = [];
 var answer = '';
 var blankSpaces = 0;
 var answerArray;
+var numberOfTries = 6;
 
 var loadWord = function(){
 
@@ -50,18 +51,25 @@ function guessLetter(){
     console.log('the letter is', letter.value);
     guessedLetters.push(letter.value);
     console.log(guessedLetters);
-
+    //Compare letter to letters in word
     for(var j = 0; j <= blankSpaces; j++){
         if(letter.value === answerArray[j]) {
             console.log (answerArray[j]);
+            //if letter = answerArray[i] set display to visible. Otherwise display: hidden;
+  
+        } else 
+        {
+        //add a body part
+            numberOfTries--;
+        //if tries = 0 then you lose.
+
         }
         console.log ('loop is working');
     
     }
 }
 
-//Compare letter to letters in word
-//if letter = answerArray[i] set display to visible. Otherwise display: hidden;
+
 
 
 
