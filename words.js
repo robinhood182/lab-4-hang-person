@@ -7,4 +7,4 @@ var words = [
     'Argentina',
     'Kenya',
     'Thailand'
-]
+];
