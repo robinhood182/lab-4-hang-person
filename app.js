@@ -5,7 +5,7 @@
 
 var listOfGuessedLetters = [];
 var answer = '';
-var blankSpaces = 0;
+var numberOfLetters = 0;
 var answerArray;
 var numberOfTries = 6;
 var correct = true;
@@ -19,7 +19,7 @@ var loadWord = function(){
 
     var index = randomWord(words.length);
     answer = words[index];
-    blankSpaces = answer.length;
+    numberOfLetters = answer.length;
     answerArray = answer.split('');
     console.log(answerArray);
 };
@@ -27,7 +27,7 @@ var loadWord = function(){
 
 console.log(answer);
 console.log(answerArray);
-console.log(blankSpaces); //length of the answer - amount of letters
+console.log(numberOfLetters); //length of the answer - amount of letters
 
 
 function randomWord(max){
@@ -42,11 +42,11 @@ console.log('app.js loaded');
 loadWord();
 
 console.log(answer);
-console.log(blankSpaces); //length of the answer - amount of letters
+console.log(numberOfLetters); //length of the answer - amount of letters
 
 
-//draw right amount of blank spaces
-for(var i = 1; i <= blankSpaces ; i++){
+//writes retrieved random word to browser
+for(var i = 1; i <= numberOfLetters ; i++){
     var blanks = document.getElementById('word-to-guess');
     blanks.innerHTML = answerArray;
 
@@ -61,14 +61,15 @@ function guessLetter(){
     var showLetters = document.getElementById('guessed-letters');
     showLetters.innerHTML += letter.value + ', ';
     correct = false;
+    console.log ('the letter is/not included in the array ' + answerArray.includes(letter.value));
 
     //Compare letter to letters in word
-    for(var j = 0; j <= blankSpaces; j++){
+    for(var j = 0; j <= numberOfLetters; j++){
         if(letter.value === answerArray[j]) {
             correct = true;
 
             console.log (answerArray[j]);
-            console.log ('the letter is/not included in the array ' + answerArray.includes(letter.value));
+            
             //if letter = answerArray[i] set display to visible. Otherwise display: hidden;
             //showCorrectLetter();
         }
@@ -83,7 +84,7 @@ function guessLetter(){
         if(numberOfTries === 0){
             alert('Sorry, you are going to hang!');
         }
-        //letter.value = '';
+    //    letter.value = '';
         
     }
     console.log('tries left', numberOfTries);
@@ -97,13 +98,13 @@ function guessLetter(){
 //if all letters in answerArray are in listOfGuessedLetters = win!
 //nested for loops recommended
 
-for(var k = 0; k < listOfGuessedLetters.length; k++){
-    for(var l = 0; l < answerArray.length; l++){
-        if(listOfGuessedLetters[k] === answerArray[l]){
+// for(var k = 0; k < listOfGuessedLetters.length; k++){
+//     for(var l = 0; l < answerArray.length; l++){
+//         if(listOfGuessedLetters[k] === answerArray[l]){
 
-        }
-    }
-}
+//         }
+//     }
+// }
 
 
 
