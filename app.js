@@ -20,7 +20,7 @@ var loadWord = function(){
     var index = randomWord(words.length);
     answer = words[index];
     blankSpaces = answer.length;
-    answerArray = answer.split(' ');
+    answerArray = answer.split('');
     console.log(answerArray);
 };
 
@@ -68,8 +68,9 @@ function guessLetter(){
             correct = true;
 
             console.log (answerArray[j]);
+            console.log ('the letter is/not included in the array ' + answerArray.includes(letter.value));
             //if letter = answerArray[i] set display to visible. Otherwise display: hidden;
-            showCorrectLetter();
+            //showCorrectLetter();
         }
         //add a body part
         //if tries = 0 then you lose.
@@ -82,7 +83,7 @@ function guessLetter(){
         if(numberOfTries === 0){
             alert('Sorry, you are going to hang!');
         }
-        letter.value = '';
+        //letter.value = '';
         
     }
     console.log('tries left', numberOfTries);
