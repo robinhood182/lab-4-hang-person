@@ -1,10 +1,10 @@
 var words = [
-    'Italy',
-    'Georgia',
-    'Spain',
-    'Switzerland',
-    'Holland',
-    'Argentina',
-    'Kenya',
-    'Thailand'
+    'italy',
+    'georgia',
+    'spain',
+    'switzerland',
+    'holland',
+    'argentina',
+    'kenya',
+    'thailand'
 ];

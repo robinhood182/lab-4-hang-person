@@ -9,6 +9,7 @@ var numberOfLetters = 0;
 var answerArray;
 var numberOfTries = 6;
 var correct = true;
+var youWin;
 
 function showCorrectLetter(){
     var hidingBlock = document.getElementById('hiding-block');
@@ -21,8 +22,10 @@ var loadWord = function(){
     answer = words[index];
     numberOfLetters = answer.length;
     answerArray = answer.split('');
-    
+    youWin = answerArray.slice();
+
     console.log(answerArray);
+    console.log('youWin = '+ youWin);
 };
 
 
@@ -68,8 +71,10 @@ function guessLetter(){
     for(var j = 0; j <= numberOfLetters; j++){
         if(letter.value.toLowerCase() === answerArray[j]) {
             correct = true;
+            youWin.pop();
 
             console.log (answerArray[j]);
+            console.log ('after popping, the length of youWin =' + youWin.length);
             
             //if letter = answerArray[i] set display to visible. Otherwise display: hidden;
             //showCorrectLetter();
