@@ -21,6 +21,7 @@ var loadWord = function(){
     answer = words[index];
     numberOfLetters = answer.length;
     answerArray = answer.split('');
+    
     console.log(answerArray);
 };
 
@@ -65,7 +66,7 @@ function guessLetter(){
 
     //Compare letter to letters in word
     for(var j = 0; j <= numberOfLetters; j++){
-        if(letter.value === answerArray[j]) {
+        if(letter.value.toLowerCase() === answerArray[j]) {
             correct = true;
 
             console.log (answerArray[j]);
@@ -81,6 +82,10 @@ function guessLetter(){
     }
     if(correct === false){
         numberOfTries--;
+
+        var gallowsPicture = document.getElementById('gallows');
+        gallowsPicture.innerHTML ='<img src="img/' + numberOfTries + '.png" width="400" />';
+
         if(numberOfTries === 0){
             alert('Sorry, you are going to hang!');
         }
