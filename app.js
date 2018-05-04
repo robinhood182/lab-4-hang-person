@@ -52,18 +52,18 @@ function guessLetter(){
     var letter = document.getElementById('letter');
     console.log('the letter is', letter.value);
     guessedLetters.push(letter.value);
-    console.log(guessedLetters);
-    correct = true;
+    
+    var showLetters = document.getElementById('guessed-letters');
+    showLetters.innerHTML += letter.value + ', ';
+    correct = false;
 
     //Compare letter to letters in word
     for(var j = 0; j <= blankSpaces; j++){
         if(letter.value === answerArray[j]) {
+            correct = true;
             console.log (answerArray[j]);
             //if letter = answerArray[i] set display to visible. Otherwise display: hidden;
-
-        }
-        else {
-            correct = false;
+            
         }
         //add a body part
         //if tries = 0 then you lose.
@@ -72,6 +72,10 @@ function guessLetter(){
     }
     if(correct === false){
         numberOfTries--;
+        if(numberOfTries === 0){
+            alert('Sorry, you are going to hang!');
+        }
+        
     }
     console.log('tries left', numberOfTries);
     console.log(correct);
