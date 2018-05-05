@@ -9,7 +9,7 @@ var numberOfLetters = 0;
 var answerArray;
 var numberOfTries = 6;
 var correct = true;
-var youWin;
+var youWinArray;
 
 function showCorrectLetter(){
     var hidingBlock = document.getElementById('word-to-guess');
@@ -22,10 +22,10 @@ var loadWord = function(){
     answer = words[index];
     numberOfLetters = answer.length;
     answerArray = answer.split('');
-    youWin = answerArray.slice();
+    youWinArray = answerArray.slice();
 
     console.log(answerArray);
-    console.log('youWin = '+ youWin);
+    console.log('youWin = '+ youWinArray);
 };
 
 
@@ -72,15 +72,15 @@ function guessLetter(){
         if(letter.value.toLowerCase() === answerArray[j]) {
             correct = true;
             showCorrectLetter();
-            youWin.pop();
+            youWinArray.pop();
 
             //show win message
-            if(youWin.length === 0){
+            if(youWinArray.length === 0){
                 
             }
-            
+
             console.log (answerArray[j]);
-            console.log ('after popping, the length of youWin =' + youWin.length);
+            console.log ('after popping, the length of youWin =' + youWinArray.length);
             
             //if letter = answerArray[i] set display to visible. Otherwise display: hidden;
             //showCorrectLetter();

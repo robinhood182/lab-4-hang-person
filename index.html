@@ -12,23 +12,31 @@
     <h1>Hang Person Game</h1>
 
     <p>Guess the name of a country.</p>
+    <div id="left">
+        <section id="input-letter">
+            <input id="letter" type="text" maxlength="1">
+            <button onclick="guessLetter()">Guess a letter</button>
+            <!-- https://stackoverflow.com/questions/29884654/button-that-refresh-page-on-click -->
+            <input type="button" value="Refresh Page" onClick="window.location.reload()">
+        </section>
+    </div>
 
+    <div id="right">
+        <section id="gallows"><img src ="img/6.png" width = "400" /> </section>
+        <section id="word-to-guess">Word to Guess</section>
+        <section id="guessed-letters"><p>Guessed Letters</p></section>
+    </div>
     <!-- gallows also shows number of guesses, number of guesses left and win or lose message  -->
     <section id="win-lose-msg">You win!</section>
-    <section id="gallows"><img src ="img/6.png" width = "400" /> </section>
     
     
-    <section id="word-to-guess">Word to Guess</section>
+    
+    
 
-    <section id="input-letter">
-        <input id="letter" type="text" maxlength="1">
-        <button onclick="guessLetter()">Guess a letter</button>
-    </section>
-
-    <section id="guessed-letters">Guessed Letters</section>
     
-    <!-- https://stackoverflow.com/questions/29884654/button-that-refresh-page-on-click -->
-    <input type="button" value="Refresh Page" onClick="window.location.reload()">
+
+    
+    
 
 
 
