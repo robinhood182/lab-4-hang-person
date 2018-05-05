@@ -12,7 +12,7 @@ var correct = true;
 var youWin;
 
 function showCorrectLetter(){
-    var hidingBlock = document.getElementById('hiding-block');
+    var hidingBlock = document.getElementById('word-to-guess');
     hidingBlock.classList.toggle('show');
 }
 
@@ -71,8 +71,14 @@ function guessLetter(){
     for(var j = 0; j <= numberOfLetters; j++){
         if(letter.value.toLowerCase() === answerArray[j]) {
             correct = true;
+            showCorrectLetter();
             youWin.pop();
 
+            //show win message
+            if(youWin.length === 0){
+                
+            }
+            
             console.log (answerArray[j]);
             console.log ('after popping, the length of youWin =' + youWin.length);
             
@@ -92,7 +98,9 @@ function guessLetter(){
         gallowsPicture.innerHTML ='<img src="img/' + numberOfTries + '.png" width="400" />';
 
         if(numberOfTries === 0){
-            alert('Sorry, you are going to hang!');
+            gallowsPicture = document.getElementById('gallows');
+        gallowsPicture.innerHTML ='<img src="img/' + numberOfTries + '.png" width="400" />';
+
         }
     //    letter.value = '';
         
