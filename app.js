@@ -25,7 +25,7 @@ var loadWord = function(){
     youWinArray = answerArray.slice();
 
     console.log(answerArray);
-    console.log('youWin = '+ youWinArray);
+    console.log('youWin = ' + youWinArray);
 };
 
 
@@ -99,7 +99,7 @@ function guessLetter(){
 
         if(numberOfTries === 0){
             gallowsPicture = document.getElementById('gallows');
-        gallowsPicture.innerHTML ='<img src="img/' + numberOfTries + '.png" width="400" />';
+            gallowsPicture.innerHTML ='<img src="img/' + numberOfTries + '.png" width="400" />';
 
         }
     //    letter.value = '';
@@ -123,12 +123,3 @@ function guessLetter(){
 //         }
 //     }
 // }
-
-
-
-//-------------------
-//display correct letters
-//display guessed letters
-//display hangman model
-//alert win or lose
-//create a restart button

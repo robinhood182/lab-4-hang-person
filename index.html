@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,13 @@
     <link rel="stylesheet" type="text/css" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Freckle+Face" rel="stylesheet">
 </head>
+
 <body>
     <h1>Hang Person Game</h1>
 
-    <p>Guess the name of a country.</p>
+    <h2>Guess the name of a country.</h2>
+
+    <p>by markalope & robinhood182</p>
     <div id="left">
         <section id="input-letter">
             <input id="letter" type="text" maxlength="1">
@@ -29,18 +33,10 @@
     <!-- gallows also shows number of guesses, number of guesses left and win or lose message  -->
     <section id="win-lose-msg">You win!</section>
     
-    
-    
-    
 
-    
+    <!-- load our two JavaScript files, in sequence-->
+    <script src="words.js"></script>
+    <script src="app.js"></script>
 
-    
-    
-
-
-
-<script src="words.js"></script>
-<script src="app.js"></script>
 </body>
 </html>

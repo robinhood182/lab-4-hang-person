@@ -1,3 +1,5 @@
+/* exported words*/
+
 var words = [
     'italy',
     'georgia',
