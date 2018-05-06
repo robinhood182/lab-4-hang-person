@@ -6,10 +6,11 @@
 var listOfGuessedLetters = [];
 var answer = '';
 var numberOfLetters = 0;
-var answerArray;
+var answerArray; 
+var hiddenWordArray; //creates copy of array with just underscores for display
 var numberOfTries = 6;
 var correct = true;
-var youWinArray;
+var youWinArray; //this is a counter array that decreases with wrong guesses. When it is 0 length, the game is lost
 
 function showCorrectLetter(){
     var hidingBlock = document.getElementById('word-to-guess');
@@ -23,8 +24,14 @@ var loadWord = function(){
     numberOfLetters = answer.length;
     answerArray = answer.split('');
     youWinArray = answerArray.slice();
+    hiddenWordArray = answerArray.slice(' ');
+
+    for(var i = 0; i < numberOfLetters; i++) {
+        hiddenWordArray[i] = '_';
+    } 
 
     console.log(answerArray);
+    console.log(hiddenWordArray);
     console.log('youWin = ' + youWinArray);
 };
 
@@ -39,20 +46,16 @@ function randomWord(max){
 }
 
 
-
-console.log('app.js loaded');
-
-
 loadWord();
 
 console.log(answer);
 console.log(numberOfLetters); //length of the answer - amount of letters
 
 
-//writes retrieved random word to browser
+//writes retrieved random word to browser but uses hiddenWordArray to only display underscores
 for(var i = 1; i <= numberOfLetters ; i++){
     var blanks = document.getElementById('word-to-guess');
-    blanks.innerHTML = answerArray;
+    blanks.innerHTML = hiddenWordArray; 
 
 }
 //create an input field for guesses and button
@@ -63,7 +66,7 @@ function guessLetter(){
     listOfGuessedLetters.push(letter.value);
     
     var showLetters = document.getElementById('guessed-letters');
-    showLetters.innerHTML += letter.value + ', ';
+    showLetters.innerHTML += letter.value + ' ';
     correct = false;
     console.log ('the letter is/not included in the array ' + answerArray.includes(letter.value));
 
@@ -71,7 +74,12 @@ function guessLetter(){
     for(var j = 0; j <= numberOfLetters; j++){
         if(letter.value.toLowerCase() === answerArray[j]) {
             correct = true;
-            showCorrectLetter();
+            hiddenWordArray[j] = letter.value;
+            
+            for(var i = 1; i <= numberOfLetters ; i++){
+                var blanks = document.getElementById('word-to-guess');
+                blanks.innerHTML = hiddenWordArray; 
+            }
             youWinArray.pop();
 
             //show win message
@@ -82,11 +90,9 @@ function guessLetter(){
             console.log (answerArray[j]);
             console.log ('after popping, the length of youWin =' + youWinArray.length);
             
-            //if letter = answerArray[i] set display to visible. Otherwise display: hidden;
-            //showCorrectLetter();
+            
         }
-        //add a body part
-        //if tries = 0 then you lose.
+        
 
         console.log ('loop is working');
 

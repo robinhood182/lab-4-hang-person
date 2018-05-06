@@ -1,16 +1,53 @@
 h1 {
-    color: red;
+    color: rgb(119, 21, 21);
+    font-size: 64px;
+    line-height: 30px;
     font-family: 'Freckle Face', cursive;
+    text-align: center;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+}
+
+input[type="text"] {
+    width: 24px;
+    height: 24px;
+}
+
+button {
+    font-size: 16px;
+    padding: 6px;
+}
+
+#new-game-button{
+    margin-top: 12px;
+    font-size: 16px;
+    padding: 6px;
 }
 
 #word-to-guess {
-    font-size: 24px;
-    color: white;
-    letter-spacing: 6px;
+    font-size: 30px;
+    font-family: sans-serif;
+    text-align: center;
+    color: black;
+    letter-spacing: 9px;
     text-transform: uppercase;
-    text-decoration: underline;
-    text-decoration-color: black;
 }
+
+.guesses-title {
+    font-size: 20px;
+    text-align: center;
+    color: rgb(119, 21, 21);
+}
+
 
 #word-to-guess.show {
     color: red;
@@ -18,10 +55,16 @@ h1 {
 
 #right {
     float: right;
+    background-color: blue;
     width: 50%;
 }
 
 #left{
+    background-color: green;
     float: left;
     width: 50%;
+}
+
+img {
+    margin-left: 150px;
 }
