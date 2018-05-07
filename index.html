@@ -18,14 +18,16 @@
 
     <p>by markalope & robinhood182</p>
 
+    <button id="play-button" onclick="loadWord()">Play game!</button>
+
     </header>
     
     
     <div id="left">
          <section id="input-letter">
         
-            <input id="letter" type="text" maxlength="1">
-            <button onclick="guessLetter()">Guess a letter</button><br />
+            <input id="letter" onfocus="this.value=''" type="text" maxlength="1">
+            <button id="guess-button" onclick="guessLetter()">Guess a letter</button><br />
             <!-- https://stackoverflow.com/questions/29884654/button-that-refresh-page-on-click -->
             <input type="button" id="new-game-button" value="Start New Game" onClick="window.location.reload()">
         
@@ -35,7 +37,7 @@
     <div id="right">
         <section id="gallows"><img src ="img/6.png" width = "400"/> </section>
 
-        <section id="word-to-guess">Word to Guess</section>
+        <section id="word-to-guess"></section>
         
         <section id="guessed-letters" ><p class="guesses-title">Guessed Letters</p></section>
     </div>
