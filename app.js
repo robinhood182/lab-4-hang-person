@@ -1,8 +1,6 @@
 'use strict';
 /* globals words i j */
 
-
-
 var listOfGuessedLetters = [];
 var answer = '';
 var numberOfLetters = 0;
@@ -12,6 +10,7 @@ var correct = true;
 var youWinArray;
 var arrayOfUnderscores = [];
 var blanks;
+
 
 document.getElementById('guess-button').disabled = true;
 
@@ -47,19 +46,10 @@ console.log(answer);
 console.log(answerArray);
 console.log(numberOfLetters); //length of the answer - amount of letters
 
-
-
-
-
-console.log('app.js loaded');
-
-
 //loadWord();
 
 console.log(answer);
 console.log(numberOfLetters); //length of the answer - amount of letters
-
-
 
 //create an input field for guesses and button
 
@@ -103,13 +93,8 @@ function guessLetter(){
             console.log ('after popping, the length of youWin =' + youWinArray.length);
             console.log(arrayOfUnderscores);
 
-            //if letter = answerArray[i] set display to visible. Otherwise display: hidden;
-            //showCorrectLetter();
         }
-        //add a body part
-        //if tries = 0 then you lose.
-
-        console.log ('loop is working');
+        
 
     }
     if(correct === false){

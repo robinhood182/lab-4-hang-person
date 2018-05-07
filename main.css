@@ -18,6 +18,7 @@ p {
 }
 
 input[type="text"] {
+    margin-left: 100px;
     width: 24px;
     height: 24px;
 }
@@ -28,6 +29,7 @@ button {
 }
 
 #new-game-button{
+    margin-left: 120px;
     margin-top: 12px;
     font-size: 16px;
     padding: 6px;
@@ -55,12 +57,11 @@ button {
 
 #right {
     float: right;
-    background-color: blue;
+    background-color: white;
     width: 50%;
 }
 
 #left{
-    background-color: green;
     float: left;
     width: 50%;
 }
