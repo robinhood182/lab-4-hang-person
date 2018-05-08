@@ -101,11 +101,11 @@ function guessLetter(){
         numberOfTries--;
 
         var gallowsPicture = document.getElementById('gallows');
-        gallowsPicture.innerHTML = '<img src="img/' + numberOfTries + '.png" width="400" />';
+        gallowsPicture.innerHTML = '<img src="img/' + numberOfTries + '.png" width="300" />';
 
         if(numberOfTries === 0){
             gallowsPicture = document.getElementById('gallows');
-            gallowsPicture.innerHTML = '<img src="img/' + numberOfTries + '.png" width="400" />';
+            gallowsPicture.innerHTML = '<img src="img/' + numberOfTries + '.png" width="300" />';
             winLoseMessage.innerHTML = '*snap*';
             document.getElementById('guess-button').disabled = true;
 
