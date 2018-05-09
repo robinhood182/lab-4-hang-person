@@ -11,6 +11,7 @@ var correct = true;
 var youWinArray;
 var arrayOfUnderscores = [];
 var blanks;
+var triesLeft = document.getElementById('tries-left');
 
 
 document.getElementById('guess-button').disabled = true;
@@ -29,6 +30,7 @@ function loadWord(){
     youWinArray = answerArray.slice();
     document.getElementById('guess-button').disabled = false;
     document.getElementById('play-button').disabled = true;
+    triesLeft.textContent = numberOfTries;
 
     //write underscores for the amount of letters in retrieved word
     for(var i = 1; i <= numberOfLetters ; i++){
@@ -58,7 +60,7 @@ function guessLetter(){
     var letter = document.getElementById('letter');
     console.log('the letter is', letter.value);
 
-    if(listOfGuessedLetters.includes(letter.value)){
+    if(listOfGuessedLetters.includes(letter.value.toUpperCase())){
         alert('You\'ve already guessed "' + letter.value.toUpperCase() + '", choose a different letter.');
         return;
     }
@@ -68,7 +70,7 @@ function guessLetter(){
         return;
     }
 
-    if(letter.value !== '' && !listOfGuessedLetters.includes(letter.value)){
+    if(letter.value !== '' && !listOfGuessedLetters.includes(letter.value.toUpperCase())){
         listOfGuessedLetters.push(letter.value.toUpperCase());
         var showLetters = document.getElementById('guessed-letters');
         showLetters.innerHTML += letter.value + ', ';
@@ -103,7 +105,7 @@ function guessLetter(){
 
         var gallowsPicture = document.getElementById('gallows');
         gallowsPicture.innerHTML = '<img src="img/' + numberOfTries + '.png" width="300" />';
-
+        triesLeft.textContent = numberOfTries;
         if(numberOfTries === 0){
             gallowsPicture = document.getElementById('gallows');
             gallowsPicture.innerHTML = '<img src="img/' + numberOfTries + '.png" width="300" />';
