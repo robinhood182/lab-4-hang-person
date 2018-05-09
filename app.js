@@ -1,5 +1,6 @@
 'use strict';
-/* globals words i j */
+/* export loadWord guessWord */
+/* globals words */
 
 var listOfGuessedLetters = [];
 var answer = '';
@@ -68,7 +69,7 @@ function guessLetter(){
     }
 
     if(letter.value !== '' && !listOfGuessedLetters.includes(letter.value)){
-        listOfGuessedLetters.push(letter.value);
+        listOfGuessedLetters.push(letter.value.toUpperCase());
         var showLetters = document.getElementById('guessed-letters');
         showLetters.innerHTML += letter.value + ', ';
         correct = false;
